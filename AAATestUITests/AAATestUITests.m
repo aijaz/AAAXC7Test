@@ -55,6 +55,18 @@
     
 }
 
+-(void) testMultiple {
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+
+    XCUIElementQuery *  staticTexts = app.tables.cells.staticTexts;
+    NSUInteger numCells = [staticTexts count];
+
+    for (NSUInteger i = 0; i < numCells; i++) {
+        XCUIElement * cell = [staticTexts elementAtIndex:i];
+        [cell tap];
+        [[app.navigationBars matchingIdentifier:@"Detail"].buttons[@"Master"] tap];
+    }
+}
 
 
 @end
