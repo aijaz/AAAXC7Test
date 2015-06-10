@@ -76,7 +76,7 @@
     NSInteger count = [self.characters count];
     NSInteger i;
     for (i = 0; i < count; i++) {
-        self.characters[count] = [self.characters[count] capitalizedString];
+        self.characters[i] = [self.characters[i] uppercaseString];
     }
     
     if (i < 0) {

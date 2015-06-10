@@ -28,6 +28,7 @@
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
     self.dataSource = [[AAACharacterDataSource alloc] init];
+    [self.dataSource yell];
     self.tableView.dataSource = self.dataSource;
 }
 
