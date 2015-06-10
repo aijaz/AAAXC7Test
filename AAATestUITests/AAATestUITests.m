@@ -34,6 +34,13 @@
 - (void)testExample {
     // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    [app.tables.staticTexts[@"Ang"] tap];
+    [[app.navigationBars matchingIdentifier:@"Detail"].buttons[@"Master"] tap];
+    
+
 }
+
+
 
 @end
