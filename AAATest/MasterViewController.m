@@ -24,6 +24,7 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    [self populateDataSource];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -35,6 +36,36 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - DataSource
+
+-(void) populateDataSource {
+    self.objects = [NSMutableArray arrayWithArray: @[
+                                                     @"Ang",
+                                                     @"Katara",
+                                                     @"Sokka",
+                                                     @"Toph",
+                                                     @"Zuko",
+                                                     @"Appa",
+                                                     @"Momo",
+                                                     @"Uncle Iroh",
+                                                     @"Azula",
+                                                     @"Suki",
+                                                     @"Mai",
+                                                     @"Ty Lee",
+                                                     @"Fire Lord Ozai",
+                                                     @"Avatar Roku",
+                                                     @"Bumi",
+                                                     @"Combustion Man",
+                                                     @"Sozin",
+                                                     @"Commander Zhao",
+                                                     @"Jet",
+                                                     @"Cabbage Merchant",
+                                                     
+                                                     ]];
+}
+
+#pragma mark -
 
 - (void)insertNewObject:(id)sender {
     if (!self.objects) {
