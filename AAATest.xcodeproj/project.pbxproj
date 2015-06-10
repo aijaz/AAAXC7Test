@@ -16,6 +16,7 @@
 		B4E3BB001B27CEE900742CCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4E3BAFE1B27CEE900742CCF /* LaunchScreen.storyboard */; };
 		B4E3BB0B1B27CEE900742CCF /* AAATestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E3BB0A1B27CEE900742CCF /* AAATestTests.m */; };
 		B4E3BB161B27CEE900742CCF /* AAATestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E3BB151B27CEE900742CCF /* AAATestUITests.m */; };
+		B4E3BB251B28718B00742CCF /* AAACharacterDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E3BB241B28718B00742CCF /* AAACharacterDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		B4E3BB111B27CEE900742CCF /* AAATestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AAATestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4E3BB151B27CEE900742CCF /* AAATestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AAATestUITests.m; sourceTree = "<group>"; };
 		B4E3BB171B27CEE900742CCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4E3BB231B28718B00742CCF /* AAACharacterDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAACharacterDataSource.h; sourceTree = "<group>"; };
+		B4E3BB241B28718B00742CCF /* AAACharacterDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAACharacterDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				B4E3BAFE1B27CEE900742CCF /* LaunchScreen.storyboard */,
 				B4E3BB011B27CEE900742CCF /* Info.plist */,
 				B4E3BAED1B27CEE900742CCF /* Supporting Files */,
+				B4E3BB231B28718B00742CCF /* AAACharacterDataSource.h */,
+				B4E3BB241B28718B00742CCF /* AAACharacterDataSource.m */,
 			);
 			path = AAATest;
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 				B4E3BAF21B27CEE900742CCF /* AppDelegate.m in Sources */,
 				B4E3BAF51B27CEE900742CCF /* MasterViewController.m in Sources */,
 				B4E3BAEF1B27CEE900742CCF /* main.m in Sources */,
+				B4E3BB251B28718B00742CCF /* AAACharacterDataSource.m in Sources */,
 				B4E3BAF81B27CEE900742CCF /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

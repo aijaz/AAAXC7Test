@@ -8,9 +8,11 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "AAACharacterDataSource.h"
 
 @interface MasterViewController ()
 
+@property (nonatomic, strong) AAACharacterDataSource * dataSource;
 @property NSMutableArray *objects;
 @end
 
@@ -24,7 +26,9 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
-    [self populateDataSource];
+    
+    self.dataSource = [[AAACharacterDataSource alloc] init];
+    self.tableView.dataSource = self.dataSource;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -39,31 +43,6 @@
 
 #pragma mark - DataSource
 
--(void) populateDataSource {
-    self.objects = [NSMutableArray arrayWithArray: @[
-                                                     @"Ang",
-                                                     @"Katara",
-                                                     @"Sokka",
-                                                     @"Toph",
-                                                     @"Zuko",
-                                                     @"Appa",
-                                                     @"Momo",
-                                                     @"Uncle Iroh",
-                                                     @"Azula",
-                                                     @"Suki",
-                                                     @"Mai",
-                                                     @"Ty Lee",
-                                                     @"Fire Lord Ozai",
-                                                     @"Avatar Roku",
-                                                     @"Bumi",
-                                                     @"Combustion Man",
-                                                     @"Sozin",
-                                                     @"Commander Zhao",
-                                                     @"Jet",
-                                                     @"Cabbage Merchant",
-                                                     
-                                                     ]];
-}
 
 #pragma mark -
 
@@ -89,36 +68,6 @@
     }
 }
 
-#pragma mark - Table View
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.objects.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-    NSDate *object = self.objects[indexPath.row];
-    cell.textLabel.text = [object description];
-    return cell;
-}
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.objects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
-}
 
 @end

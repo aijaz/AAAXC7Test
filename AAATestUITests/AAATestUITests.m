@@ -65,8 +65,14 @@
         XCUIElement * cell = [staticTexts elementAtIndex:i];
         [cell tap];
         [[app.navigationBars matchingIdentifier:@"Detail"].buttons[@"Master"] tap];
+        if (i == 3) {
+            // We don't really need to see all the rows for this demo.
+            break;
+        }
     }
 }
+
+
 
 
 @end
