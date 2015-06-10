@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <XCTest/XCTest.h>
+#import <XCTest/XCUIElementQuery.h>
+#import <XCTest/XCUIElement.h>
 
 @interface AAATestUITests : XCTestCase
 
@@ -39,6 +41,18 @@
     [[app.navigationBars matchingIdentifier:@"Detail"].buttons[@"Master"] tap];
     
 
+}
+
+-(void) testScrolling {
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    XCUIElementQuery * tableElement = app.tables;
+    XCUIElement * table = tableElement.element;
+    [table swipeUp];
+    
+    [app.tables.staticTexts[@"Commander Zhao"] tap];
+    [app.staticTexts[@"My_ACCID"] tap];
+    [[app.navigationBars matchingIdentifier:@"Detail"].buttons[@"Master"] tap];
+    
 }
 
 
