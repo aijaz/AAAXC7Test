@@ -51,6 +51,9 @@
     
     [app.tables.staticTexts[@"Commander Zhao"] tap];
     [app.staticTexts[@"My_ACCID"] tap];
+    [app.staticTexts[@"My_ACCLabel"] tap];
+    [[[XCUIApplication alloc] init].staticTexts[@"My_ACCID"] tap];
+    
     [[app.navigationBars matchingIdentifier:@"Detail"].buttons[@"Master"] tap];
     
 }
